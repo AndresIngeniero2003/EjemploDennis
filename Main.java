@@ -7,6 +7,7 @@ public class Main{
         Scanner sc = new Scanner(System.in);
         LinkedList<Empleado> lista = new LinkedList<>();
         ModificarEdad me = new ModificarEdad();
+        imprimir im = new imprimir();
 
         for(int i=0; i<3; i++){
             Empleado item = new Empleado(null, null, null, i, null);
@@ -26,12 +27,8 @@ public class Main{
 
         lista = me.Edad(lista);
 
-        String cadena = " ";
-        for (Empleado empleado : lista) {
-
-            cadena = cadena + "\n" + empleado.getNombre() + "\n" + empleado.getApellido() + "\n" + empleado.getDireccion() +
-            "\n" + empleado.getEdad() + "\n" + empleado.getCargo() + "\n";
-        }
+        String cadena = im.mostrar(lista);
+        
         System.out.println(cadena);
     }
 }
